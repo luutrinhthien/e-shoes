@@ -34,9 +34,8 @@ const Header = () => {
           <img src={LOGO} alt="Logo"></img>
         </Link>
         <div className="flex items-center pr-3 gap-x-4">
-          <a href="/cart">
-            <img srcSet={`${CART} 3.5x`} alt="Cart"></img>
-          </a>
+
+          <img srcSet={`${CART} 3.5x`} alt="Cart" onClick={() => {navigate('/cart')}} style={{ cursor: 'pointer' }}></img>
 
           {name !== null ? (
             <div className="relative">
@@ -76,11 +75,9 @@ const Header = () => {
               </div>
             </div>
           ) : (
-            <a href="/login" alt="Login">
-              <Button className="h-[46px] w-[142px] text-[#FFB800] font-primaryFont font-bold gap-1 rounded-[8px] shadow-linearColor1 bg-white hover:bg-[#FFB800] hover:text-white transition-all ease-in-out duration-300">
+              <Button onClick={() => navigate('/login')} className="h-[46px] w-[142px] text-[#FFB800] font-primaryFont font-bold gap-1 rounded-[8px] shadow-linearColor1 bg-white hover:bg-[#FFB800] hover:text-white transition-all ease-in-out duration-300">
                 Đăng nhập
               </Button>
-            </a>
           )}
         </div>
       </nav>
