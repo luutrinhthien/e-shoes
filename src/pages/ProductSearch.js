@@ -13,6 +13,8 @@ const ProductSearch = () => {
     const fetchData = async () => {
       await searchProduct(searchItem.name, searchItem.type).then((res) => {
         setResult(res);
+        console.log(res);
+        console.log(res.length);
       });
     };
     fetchData();

@@ -2,7 +2,8 @@ import React from "react";
 import P1 from "../assets/images/p1.png";
 import Button from "../components/Button";
 import STAR from "../assets/images/star.png";
-import { Link } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+
 
 const ProductShow = ({
   children = [],
@@ -12,6 +13,7 @@ const ProductShow = ({
   nums = undefined,
   ...props
 }) => {
+  const navigate = useNavigate();
   if (nums) {
     children = children?.slice(0, 8);
   }
@@ -27,10 +29,10 @@ const ProductShow = ({
         className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gr gap-x-[20px] gap-y-[20px]`}
       >
         {children?.map((item) => (
-          <Link
-            to={`/product/${item._id}`}
+          <div
             key={item._id}
-            className="max-w-[342.25px]"
+            className="product-item max-w-[342.25px]"
+            onClick={() => navigate(`product/${item._id}`)}
           >
             <div className="flex flex-col  gap-y-[20px] bg-[#FCFCEE] rounded-[16px] p-3 ">
               <div>
@@ -69,7 +71,7 @@ const ProductShow = ({
                 </Button>
               </div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     );

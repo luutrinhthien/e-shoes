@@ -32,7 +32,7 @@ const NewPost = () => {
       </div>
       <div className="flex flex-col items-center justify-center text-center wrapper">
         <div className="mt-[40px]">
-          <ProductShow value="price" nums={8}>
+          <ProductShow children={result} value="price" nums={8}>
             {result}
           </ProductShow>
         </div>

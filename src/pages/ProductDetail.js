@@ -22,6 +22,14 @@ const ProductDetail = () => {
       await productDetail(productID.id).then((res) => {
         setProduct(res.infProduct);
         setSeller(res.infSeller);
+
+        if (!product.HinhAnh) {
+          setProduct({...product, HinhAnh: [PHONE]})
+        }
+        if (!seller.hinhanh) {
+          setProduct({...seller, hinhanh: USER})
+        }
+
       });
     };
     fetchData();
