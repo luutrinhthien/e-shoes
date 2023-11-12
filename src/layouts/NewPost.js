@@ -13,6 +13,7 @@ const NewPost = () => {
     const fetchData = async () => {
       await searchProduct().then((res) => {
         setResult(res);
+        console.log(res)
       });
     };
     fetchData();

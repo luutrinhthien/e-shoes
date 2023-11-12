@@ -14,19 +14,6 @@ const Slogan = () => {
         <div className="grid grid-cols-3">
           <div className="items-center justify-center">
             <div className="flex items-center justify-center">
-              <img src={PRODUCT} alt="Location"></img>
-            </div>
-            <div className="items-center justify-center block text-center">
-              <h2 className="font-secondaryFont text-[22px] font-bold text-[#434343]">
-                Chọn sản phẩm
-              </h2>
-              <p className="font-primaryFont text-[18px] font-normal text-[#9E9E9E]">
-                Tìm kiếm hàng ngàn sản phẩm cũ đang được đăng bán
-              </p>
-            </div>
-          </div>
-          <div className="items-center justify-center">
-            <div className="flex items-center justify-center">
               <img src={LOCATION} alt="Location"></img>
             </div>
             <div className="items-center justify-center block text-center">
@@ -35,6 +22,19 @@ const Slogan = () => {
               </h2>
               <p className="font-primaryFont text-[18px] font-normal text-[#9E9E9E]">
                 Chọn địa điểm mà bạn muốn giao sản phẩm
+              </p>
+            </div>
+          </div>
+          <div className="items-center justify-center">
+            <div className="flex items-center justify-center">
+              <img src={PRODUCT} alt="Location"></img>
+            </div>
+            <div className="items-center justify-center block text-center">
+              <h2 className="font-secondaryFont text-[22px] font-bold text-[#434343]">
+                Chọn sản phẩm
+              </h2>
+              <p className="font-primaryFont text-[18px] font-normal text-[#9E9E9E]">
+                Tìm kiếm hàng ngàn sản phẩm cũ đang được đăng bán
               </p>
             </div>
           </div>
