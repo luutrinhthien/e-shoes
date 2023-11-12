@@ -1,37 +1,37 @@
 import { Link } from "react-router-dom";
 
 import CIRCLE from "../assets/images/circle.png";
-import HOUSEHOLD from "../assets/images/household.png";
-import ELECTRONIC from "../assets/images/electronic.png";
-import CLOTHES from "../assets/images/clothes.png";
-import SPORT from "../assets/images/sport.png";
-import VEHICLE from "../assets/images/vehicle.png";
-import BOOK from "../assets/images/book.png";
+import SNEAKER from "../assets/images/SN.png";
+import FORMAL from "../assets/images/FM.png";
+import SPORT from "../assets/images/SP.png";
+import SANDALS from "../assets/images/SD.png";
+import SLIPPERS from "../assets/images/SL.png";
+import SOCKS from "../assets/images/SK.png";
 
 const Catalog_Items = [
   {
-    title: "Gia dụng",
-    image: HOUSEHOLD,
+    title: "Sneaker",
+    image: SNEAKER,
   },
   {
-    title: "Thời trang",
-    image: CLOTHES,
+    title: "Formal",
+    image: FORMAL,
   },
   {
-    title: "Thể thao",
+    title: "Sport",
     image: SPORT,
   },
   {
-    title: "Điện tử",
-    image: ELECTRONIC,
+    title: "Sandals",
+    image: SANDALS,
   },
   {
-    title: "Sách",
-    image: BOOK,
+    title: "Slippers",
+    image: SLIPPERS,
   },
   {
-    title: "Xe",
-    image: VEHICLE,
+    title: "Socks",
+    image: SOCKS,
   },
 ];
 

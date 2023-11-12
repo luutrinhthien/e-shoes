@@ -4,7 +4,7 @@ import DELIVERY from "../assets/svg/delivery.svg";
 import Button from "../components/Button";
 
 import SEARCH_ICON from "../assets/images/search2.png";
-import SEARCH_BANNER from "../assets/images/search_banner.png";
+import SNEAKER from "../assets/images/sneakersss.png";
 import { useNavigate, Link } from "react-router-dom";
 
 const SearchBanner = () => {
@@ -19,10 +19,10 @@ const SearchBanner = () => {
         <div className="">
           <div>
             <h1 className="text-white font-primaryFont text-5xl lg:text-[88px] font-bold">
-              Đồ cũ giá rẻ
+              Giày cũ - Giày chính hãng
             </h1>
             <h2 className="text-black font-primaryFont text-xl lg:text-[22px] font-bold mt-10">
-              Chắc chắn bạn sẽ tìm thấy sản phẩm ưa thích của mình tại đây
+              Chắc chắn bạn sẽ tìm thấy đôi giày ưa thích của mình tại đây
             </h2>
           </div>
           <div className="grid grid-flow-row items-center bg-white rounded-[16px] mt-[35px] ">
@@ -49,7 +49,7 @@ const SearchBanner = () => {
             </div>
           </div>
         </div>
-        <img className="" src={SEARCH_BANNER} alt="Search banner"></img>
+        <img className="" src={SNEAKER} alt="Sneakers!"></img>
       </div>
     </section>
   );
