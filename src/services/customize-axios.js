@@ -2,7 +2,7 @@ import axios from "axios";
 
 const instance = axios.create({
   // baseURL: "https://E-shoes-server.vercel.app",
-  baseURL: "http://localhost:3001",
+  baseURL: "https://e-shoes-backend.vercel.app",
 });
 
 instance.interceptors.response.use(
