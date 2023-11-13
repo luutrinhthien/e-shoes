@@ -71,11 +71,12 @@ const Register = () => {
                 className="bg-[#CAC5C5] input-form w-[350px] h-[40px] rounded-[8px] px-[15px] font-primaryFont text-[18px] text-[#3E3838] placeholder-[#3E3838] placeholder-[18px]"
               ></input>
               <button
-                className="w-[330px] h-[68px] rounded-[8px] mt-[10px] bg-[#F59500]  hover:bg-[#FFAD2D] active:bg-[#F09303] font-secondaryFont font-bold text-white text-[22px] ct-transition"
+                className="w-[330px] h-[68px] rounded-[8px] mt-[10px] bg-[#FF7A7A]  hover:bg-[#FFAD2D] active:bg-[#F09303] font-secondaryFont font-bold text-white text-[22px] ct-transition"
                 type="submit"
               >
                 Đăng ký
               </button>
+              <p>Tôi đồng ý với <a style={{color: "#2680ec"}}>Điều khoản sử dụng</a></p>
             </form>
 
             {state && (

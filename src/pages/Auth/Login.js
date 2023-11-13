@@ -28,6 +28,7 @@ const Login = () => {
         localStorage.setItem("username", res.user.username);
         localStorage.setItem("_id", res.user._id);
         localStorage.setItem("name", res.user.hoten);
+        localStorage.setItem("cart", JSON.stringify([]));
         navigate("/home");
       } else {
         if (res && res.status === 400) {

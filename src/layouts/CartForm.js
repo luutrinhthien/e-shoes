@@ -8,6 +8,7 @@ import EMPTY_CART from "../assets/images/empty-cart.png";
 import { getCart } from "../services/user/UserServices";
 
 const CartForm = () => {
+
   const _idUser = localStorage.getItem("_id");
   const [cart, setCart] = useState({});
   const [products, setProducts] = useState([]);
@@ -15,13 +16,21 @@ const CartForm = () => {
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
-    const fetchData = async () => {
-      await getCart(_idUser).then((res) => {
-        setCart(res.cart);
-        setProducts(res.products);
-      });
-    };
-    fetchData();
+    // const fetchData = async () => {
+    //   await getCart(_idUser).then((res) => {
+    //     setCart(res.cart);
+    //     setProducts(res.products);
+    //   });
+    // };
+    // fetchData();
+    let currentProducts = JSON.parse(localStorage.getItem("cart"))
+    setProducts(currentProducts);
+    setCart({
+      _idUser: _idUser,
+      cartItem: currentProducts.map(
+        (product) => ({_idSp: product._id, amount: 1})
+      )
+    });
   }, [_idUser]);
 
   if (products) {

@@ -5,7 +5,7 @@ import ProductShow from "../components/ProductShow";
 import MORE from "../assets/svg/more.svg";
 import Button from "../components/Button";
 
-const NewPost = () => {
+const NoiBatPost = () => {
   const [result, setResult] = useState([]);
   const navigate = useNavigate();
 
@@ -27,12 +27,12 @@ const NewPost = () => {
     <section className="bg-white pt-[80px] pb-[50px]">
       <div className="flex items-center justify-center wrapper xl:justify-start">
         <h1 className="font-secondaryFont font-bold text-[43px] text-black">
-          Sản phẩm mới
+          Sản phẩm nổi bật
         </h1>
       </div>
       <div className="flex flex-col items-center justify-center text-center wrapper">
         <div className="mt-[40px]">
-          <ProductShow children={result} value="price" nums={8}>
+          <ProductShow children={result} nums={8}>
             {result}
           </ProductShow>
         </div>
@@ -50,4 +50,4 @@ const NewPost = () => {
   );
 };
 
-export default NewPost;
+export default NoiBatPost;

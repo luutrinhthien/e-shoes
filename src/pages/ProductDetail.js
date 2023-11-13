@@ -13,7 +13,6 @@ const ProductDetail = () => {
   const productID = useParams();
   const _idUser = localStorage.getItem("_id");
   const [product, setProduct] = useState({});
-  const [seller, setSeller] = useState({});
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
 
@@ -21,15 +20,10 @@ const ProductDetail = () => {
     const fetchData = async () => {
       await productDetail(productID.id).then((res) => {
         setProduct(res.infProduct);
-        setSeller(res.infSeller);
-
+        console.log(res.infProduct)
         if (!product.HinhAnh) {
-          setProduct({...product, HinhAnh: [PHONE]})
+          // setProduct({...product, HinhAnh: [PHONE]})
         }
-        if (!seller.hinhanh) {
-          setProduct({...seller, hinhanh: USER})
-        }
-
       });
     };
     fetchData();
@@ -57,15 +51,25 @@ const ProductDetail = () => {
     return result.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
 
-  const addCartHandle = async () => {
+  // const addCartHandle = async () => {
+  //   if (_idUser) {
+  //     await addCart(_idUser, product._id).then((res) => {
+  //       if (res && res._id) {
+  //         toastr.success("Thêm sản phẩm vào giỏ hàng thành công!");
+  //       } else {
+  //         toastr.error("Có lỗi xảy ra, vui lòng đăng nhập và thử lại!");
+  //       }
+  //     });
+  //   } else {
+  //     navigate("/login");
+  //   }
+  // };
+
+  const addCartHandle = () => {
     if (_idUser) {
-      await addCart(_idUser, product._id).then((res) => {
-        if (res && res._id) {
-          toastr.success("Thêm sản phẩm vào giỏ hàng thành công!");
-        } else {
-          toastr.error("Có lỗi xảy ra, vui lòng đăng nhập và thử lại!");
-        }
-      });
+      let currentcart = JSON.parse(localStorage.getItem("cart"));
+      localStorage.setItem("cart", JSON.stringify([...currentcart, product]))
+      toastr.success("Thêm sản phẩm vào giỏ hàng thành công!");
     } else {
       navigate("/login");
     }
@@ -142,33 +146,7 @@ const ProductDetail = () => {
             </div>
           </div>
           <div className="flex p-2 flex-col gap-y-3 justify-center items-center xl:w-[430px] h-[280px] rounded-[24px] bg-[#FCFCEE]">
-            <div className="flex h-[50px] gap-x-[20px] justify-center items-center">
-              <div className="flex items-center">
-                {seller.hinhanh ? (
-                  <img
-                    src={seller.hinhanh}
-                    alt="user"
-                    className="h-[50px] w-[50px] rounded-[180px]"
-                  />
-                ) : (
-                  <img src={USER} alt="user" className="h-[50px]" />
-                )}
-                <h1 className="font-secondaryFont font-bold text-[#FB3C00] text-[22px] min-w-[150px] pl-3">
-                  {seller.hoten}
-                </h1>
-              </div>
-              <Link to={`http://localhost:3000/user/${seller._id}`}>
-                <button className="h-[41px] w-[100px] rounded-[8px] bg-[#F59500] text-[18px] text-white font-secondaryFont font-bold hover:bg-[#FFAD2D] active:bg-[#F09303]">
-                  Xem trang
-                </button>
-              </Link>
-            </div>
-            <div className="mt-[20px] p-2 flex items-center justify-center gap-2 xl:w-[379px] h-[48px] rounded-[8px] bg-[#E6E6E6]">
-              <img src={PHONE} alt="phone" />
-              <h1 className="font-secondaryFont font-bold text-[22px] text-[#FF0000]">
-                Liên lạc: {seller.SDT}
-              </h1>
-            </div>
+            
             <button
               onClick={addCartHandle}
               className="w-[200px] h-[68px] rounded-[8px] mt-[10px] bg-[#F59500]  hover:bg-[#FFAD2D] active:bg-[#F09303] font-secondaryFont font-bold text-white text-[22px]"

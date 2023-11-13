@@ -258,7 +258,7 @@ const UserDetail = () => {
           </div>
           <div className="w-fit hidden md:flex flex-col p-8 rounded-[8px] border-dashed border-[#FFB800] border-[2px] gap-y-3 h-fit">
             <div className="flex">
-              <div className="pr-[50px] border-r-[#FFB800] border-r-[2px]">
+              {/* <div className="pr-[50px] border-r-[#FFB800] border-r-[2px]">
                 <Button
                   onClick={() => {
                     setShow("postedproduct");
@@ -271,8 +271,8 @@ const UserDetail = () => {
                 >
                   Đang bán
                 </Button>
-              </div>
-              <div className="pl-[50px]">
+              </div> */}
+              {/* <div className="pl-[50px]">
                 <Button
                   disabled={_id === _idUser.id ? false : true}
                   onClick={() => {
@@ -288,9 +288,9 @@ const UserDetail = () => {
                 >
                   Đã đặt
                 </Button>
-              </div>
+              </div> */}
             </div>
-            <div className="flex flex-col mt-5 h-fit gap-y-3">
+            {/* <div className="flex flex-col mt-5 h-fit gap-y-3">
               {show === "postedproduct" ? (
                 product.length > 0 ? (
                   product.map((item) => (
@@ -324,7 +324,7 @@ const UserDetail = () => {
                   </h1>
                 </div>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

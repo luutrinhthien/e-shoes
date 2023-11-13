@@ -3,7 +3,7 @@ import { removeItemCart } from "../services/user/UserServices";
 import LEFT from "../assets/svg/left.svg";
 import RIGHT from "../assets/svg/right.svg";
 import ERASE from "../assets/images/delete.png";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import toastr from "toastr";
 
 const CartProduct = ({
@@ -14,6 +14,7 @@ const CartProduct = ({
   cart,
   setCart,
 }) => {
+  const navigate = useNavigate();
   const _iduser = localStorage.getItem("_id");
   const [numProduct, setNumProduct] = useState(numPerId);
 
@@ -112,14 +113,22 @@ const CartProduct = ({
           </h1>
         </div>
         <button
-          onClick={async () => {
-            await removeItemCart(_iduser, children._id).then((res) => {
-              toastr.success("Xóa sản phẩm khỏi đơn hàng thành công");
-              setTimeout(() => {
-                document.location.reload();
-              }, 800);
-            });
+          onClick={() => {
+            setNumProduct(numProduct - 1);
+            const temp = JSON.parse(localStorage.getItem("cart"));
+            temp.filter((item) => item._id !== children._id)
+            localStorage.setItem("cart", JSON.stringify(temp));
+            toastr.success("Xóa sản phẩm khỏi đơn hàng thành công");
+            navigate('/cart');
           }}
+          // onClick={async () => {
+          //   await removeItemCart(_iduser, children._id).then((res) => {
+          //     toastr.success("Xóa sản phẩm khỏi đơn hàng thành công");
+          //     setTimeout(() => {
+          //       document.location.reload();
+          //     }, 800);
+          //   });
+          // }}
           className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
         >
           <img src={ERASE} alt="erase" className="w-4" />
