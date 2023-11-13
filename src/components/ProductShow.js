@@ -26,7 +26,7 @@ const ProductShow = ({
   if (value == "price") {
     return (
       <div
-        className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gr gap-x-[20px] gap-y-[20px]`}
+        className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gr gap-x-[10px] gap-y-[40px]`}
       >
         {children?.map((item) => (
           <div
@@ -34,7 +34,7 @@ const ProductShow = ({
             className="product-item max-w-[342.25px]"
             onClick={() => navigate(`product/${item._id}`)}
           >
-            <div className="flex flex-col  gap-y-[20px] bg-[#FCFCEE] rounded-[16px] p-3 ">
+            {/* <div className="flex flex-col  gap-y-[20px] bg-[#FCFCEE] rounded-[16px] p-3 "> */}
               <div>
                 {item.HinhAnh[0] ? (
                   <img
@@ -52,24 +52,23 @@ const ProductShow = ({
               </div>
               <div>
                 <div className="flex gap-x-[15px]">
-                  <img src={P1} alt={item.TenSp}></img>
                   <div className="flex flex-col text-left">
                     <h1 className="font-secondaryFont font-bold text-[22px] text-[#424242]">
                       {item.TenSp}
                     </h1>
                     <div className="flex items-center gap-x-[5px]">
                       <p className="font-secondaryFont font-bold text-[22px] text-[#FFB30E]">
-                        {intToVND(item.Gia)} VND
+                        {'$'} {intToVND(item.Gia)} VND
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="flex items-center justify-center">
-                <Button className="bg-[#E4F1D8] text-[#79B93C] text-[22px] font-secondaryFont font-bold h-[42px] w-[127px]">
-                  Mua ngay
-                </Button>
-              </div>
+            {/* </div> */}
+            <div className="flex">
+              <Button className="bg-[#E4F1D8] text-[#79B93C] text-[22px] font-secondaryFont font-bold h-[42px] w-[127px] rounded-[16px]">
+                Mua ngay
+              </Button>
             </div>
           </div>
         ))}
@@ -77,10 +76,16 @@ const ProductShow = ({
     );
   } else {
     return (
-      <div className="grid grid-cols-4 gap-x-[20px] gap-y-[20px]">
+      <div 
+        className={`grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gr gap-x-[10px] gap-y-[40px]`}
+      >
         {children.map((item) => (
-          <a href={link} key={item.TenSp}>
-            <div className="flex flex-col gap-y-[20px] bg-[#FCFCEE] rounded-[16px] p-3">
+          <div
+            key={item._id}
+            className="product-item max-w-[342.25px]"
+            onClick={() => navigate(`product/${item._id}`)}
+          >
+            {/* <div className="flex flex-col gap-y-[20px] bg-[#FCFCEE] rounded-[16px] p-3"> */}
               <div>
                 <img
                   src={item.HinhAnh}
@@ -90,7 +95,6 @@ const ProductShow = ({
               </div>
               <div>
                 <div className="flex gap-x-[15px]">
-                  <img src={item.seller} alt={item.TenSp}></img>
                   <div className="flex flex-col text-left">
                     <h1 className="font-secondaryFont font-bold text-[22px] text-[#424242]">
                       {item.TenSp}
@@ -98,19 +102,19 @@ const ProductShow = ({
                     <div className="flex items-center gap-x-[5px]">
                       <img src={STAR} alt="Star"></img>
                       <p className="font-secondaryFont font-bold text-[22px] text-[#FFB30E]">
-                        {item.Gia}
+                        {item.SoLuong}
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="flex items-center justify-center">
-                <Button className="bg-[#E4F1D8] text-[#79B93C] text-[22px] font-secondaryFont font-bold h-[42px] w-[127px]">
-                  Mua ngay
-                </Button>
-              </div>
+            {/* </div> */}
+            <div className="flex">
+              <Button className="bg-[#E4F1D8] text-[#79B93C] text-[22px] font-secondaryFont font-bold h-[42px] w-[127px] rounded-[16px]">
+                Mua ngay
+              </Button>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     );

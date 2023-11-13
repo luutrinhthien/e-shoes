@@ -75,7 +75,7 @@ const Header = () => {
               </div>
             </div>
           ) : (
-              <Button onClick={() => navigate('/login')} className="h-[46px] w-[142px] text-[#FFB800] font-primaryFont font-bold gap-1 rounded-[8px] shadow-linearColor1 bg-white hover:bg-[#FFB800] hover:text-white transition-all ease-in-out duration-300">
+              <Button onClick={() => navigate('/login')} className="h-[46px] w-[142px] text-[#FF7A7A] font-primaryFont font-bold gap-1 rounded-[8px] shadow-linearColor1 bg-white hover:bg-[#FF7A7A] hover:text-white transition-all ease-in-out duration-300">
                 Đăng nhập
               </Button>
           )}

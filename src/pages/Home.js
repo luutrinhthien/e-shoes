@@ -4,6 +4,7 @@ import Slogan from "../layouts/Slogan";
 import Catalog from "../layouts/Catalog";
 import NewPost from "../layouts/NewPost";
 import Feature from "../layouts/Feature";
+import NoiBatPost from "../layouts/NoiBatPost";
 
 const Home = () => {
   return (
@@ -12,8 +13,9 @@ const Home = () => {
       <SearchBanner></SearchBanner>
       <Slogan></Slogan>
       <Catalog></Catalog>
-      <Feature></Feature>
       <NewPost></NewPost>
+      <Feature></Feature>
+      <NoiBatPost />
     </>
   );
 };
